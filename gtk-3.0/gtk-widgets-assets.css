@@ -46,11 +46,11 @@
 .check:active,
 .check row:selected:active,
 .check row:selected:focus:active {
-    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      linear-gradient(45deg, transparent, transparent 30%, @theme_selected_bg_color 30%, @theme_selected_bg_color 70%, transparent 70%, transparent),
-                      linear-gradient(-45deg, transparent, transparent 37%, @theme_selected_bg_color 37%, @theme_selected_bg_color 62%, transparent 62%, transparent),
+    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      linear-gradient(45deg, transparent, transparent 30%, @theme_selected_fg_color 30%, @theme_selected_fg_color 70%, transparent 70%, transparent),
+                      linear-gradient(-45deg, transparent, transparent 37%, @theme_selected_fg_color 37%, @theme_selected_fg_color 62%, transparent 62%, transparent),
                       linear-gradient(to bottom, @theme_base_color, @theme_base_color),
                       linear-gradient(to bottom, @theme_base_color, @theme_base_color),
                       linear-gradient(to bottom, shade(@theme_base_color, 0.6), shade(@theme_base_color, 0.6)),
@@ -98,7 +98,7 @@
 .check:inconsistent,
 .check row:selected:inconsistent,
 .check row:selected:focus:inconsistent {
-    background-image: linear-gradient(to bottom, @theme_selected_bg_color, @theme_selected_bg_color),
+    background-image: linear-gradient(to bottom, @theme_selected_fg_color, @theme_selected_fg_color),
                       linear-gradient(to bottom, @theme_base_color, @theme_base_color),
                       linear-gradient(to bottom, @theme_base_color, @theme_base_color),
                       linear-gradient(to bottom, shade(@theme_base_color, 0.6), shade(@theme_base_color, 0.6)),
@@ -164,7 +164,7 @@
 .radio:active,
 .radio row:selected:active,
 .radio row:selected:focus:active {
-    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
+    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
                       -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_base_color), to(transparent)),
                       -gtk-gradient(radial, center center, 0, center center, 0.5, to(shade(@theme_base_color, 0.6)), to(transparent));
 
@@ -188,7 +188,7 @@
 .radio:inconsistent,
 .radio row:selected:inconsistent,
 .radio row:selected:focus:inconsistent {
-    background-image: linear-gradient(to bottom, @theme_selected_bg_color, @theme_selected_bg_color),
+    background-image: linear-gradient(to bottom, @theme_selected_fg_color, @theme_selected_fg_color),
                       -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_base_color), to(transparent)),
                       -gtk-gradient(radial, center center, 0, center center, 0.5, to(shade(@theme_base_color, 0.6)), to(transparent));
 
@@ -210,11 +210,11 @@
 }
 
 .menuitem.check:active {
-    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      linear-gradient(45deg, transparent, transparent 30%, @theme_selected_bg_color 30%, @theme_selected_bg_color 70%, transparent 70%, transparent),
-                      linear-gradient(-45deg, transparent, transparent 37%, @theme_selected_bg_color 37%, @theme_selected_bg_color 62%, transparent 62%, transparent);
+    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      linear-gradient(45deg, transparent, transparent 30%, @theme_selected_fg_color 30%, @theme_selected_fg_color 70%, transparent 70%, transparent),
+                      linear-gradient(-45deg, transparent, transparent 37%, @theme_selected_fg_color 37%, @theme_selected_fg_color 62%, transparent 62%, transparent);
 
     background-position: 17% 50%, 41% 73%, 90% 26%, 24% 64%, 76% 48%;
     background-size: 17% 17%, 20% 20%, 18% 18%, 30% 30%, 50% 50%;
@@ -246,7 +246,7 @@
 }
 
 .menuitem.radio:active {
-    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent));
+    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent));
     background-position: center center;
     background-size: 40% 40%;
     background-repeat: no-repeat;
@@ -268,7 +268,7 @@
 
 .menuitem.check:inconsistent,
 .menuitem.radio:inconsistent {
-    background-image: linear-gradient(to bottom, @theme_selected_bg_color, @theme_selected_bg_color);
+    background-image: linear-gradient(to bottom, @theme_selected_fg_color, @theme_selected_fg_color);
 
     background-position: center center;
     background-size: 50% 12%;
@@ -313,11 +313,11 @@ GtkIconView.content-view.cell.check {
 }
 
 GtkIconView.content-view.cell.check:active {
-    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_bg_color), to(transparent)),
-                      linear-gradient(45deg, transparent, transparent 30%, @theme_selected_bg_color 30%, @theme_selected_bg_color 70%, transparent 70%, transparent),
-                      linear-gradient(-45deg, transparent, transparent 37%, @theme_selected_bg_color 37%, @theme_selected_bg_color 62%, transparent 62%, transparent),
+    background-image: -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      -gtk-gradient(radial, center center, 0, center center, 0.5, to(@theme_selected_fg_color), to(transparent)),
+                      linear-gradient(45deg, transparent, transparent 30%, @theme_selected_fg_color 30%, @theme_selected_fg_color 70%, transparent 70%, transparent),
+                      linear-gradient(-45deg, transparent, transparent 37%, @theme_selected_fg_color 37%, @theme_selected_fg_color 62%, transparent 62%, transparent),
                       linear-gradient(to bottom, @theme_base_color, @theme_base_color),
                       linear-gradient(to bottom, @theme_base_color, @theme_base_color),
                       linear-gradient(to bottom, shade(@theme_base_color, 0.6), shade(@theme_base_color, 0.6)),
