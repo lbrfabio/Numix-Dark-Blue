@@ -1,6 +1,6 @@
 # Numix GTK Theme
 
-gtk-color-scheme = "bg_color:#dedede\nfg_color:#555555\nbase_color:#f2f2f2\ntext_color:#666666\nselected_bg_color:#dedede\nselected_fg_color:#8da9e0\ntooltip_bg_color:#dedede\ntooltip_fg_color:#555555\ntitlebar_bg_color:#dedede\ntitlebar_fg_color:#555555\nmenubar_bg_color:#dedede\nmenubar_fg_color:#555555\ntoolbar_bg_color:#dedede\ntoolbar_fg_color:#555555\nmenu_bg_color:#eeeeee\nmenu_fg_color:#555555\npanel_bg_color:#dedede\npanel_fg_color:#555555\nlink_color:#8da9e0"
+gtk-color-scheme = "bg_color:#dedede\nfg_color:#555555\nbase_color:#f2f2f2\ntext_color:#666666\nselected_bg_color:#dedede\nselected_fg_color:#8da9e0\ntooltip_bg_color:#dedede\ntooltip_fg_color:#555555\ntitlebar_bg_color:#393939\ntitlebar_fg_color:#b0b0b0\nmenubar_bg_color:#393939\nmenubar_fg_color:#b0b0b0\ntoolbar_bg_color:#393939\ntoolbar_fg_color:#b0b0b0\nmenu_bg_color:#454545\nmenu_fg_color:#d0d0d0\npanel_bg_color:#dedede\npanel_fg_color:#d0d0d0\nlink_color:#8da9e0"
 
 gtk-toolbar-icon-size = small-toolbar
 gtk-auto-mnemonics	= 1 # Disables ugly lines under menu items
@@ -229,7 +229,7 @@ style "murrine-scrollbar" {
 
 	engine "murrine" {
 		roundness = 0
-		contrast = 0.0
+		contrast = 0.00
 		border_shades = { 1.0, 1.0 }
 		trough_shades = { 0.97, 0.97 }
 		trough_border_shades = { 1.0, 1.0 }
@@ -379,7 +379,7 @@ style "murrine-menu" = "murrine-thin" {
 
 style "murrine-menu-item" = "murrine-wider" {
 	bg[PRELIGHT] = @selected_bg_color
-	bg[SELECTED] = @selected_bg_color
+	bg[SELECTED] = shade(0.4, @selected_bg_color)
 	bg[ACTIVE] = @selected_bg_color
 
 	fg[NORMAL] = @menu_fg_color # Fix for XFCE menu text
@@ -446,7 +446,7 @@ style "murrine-toolbar" = "murrine-thin" {
     xthickness=3
     ythickness=3
 
-	bg[NORMAL] = @toolbar_bg_color
+#	bg[NORMAL] = @toolbar_bg_color   #inkscape | eclipse fix toolbar
 	bg[PRELIGHT] = shade (1.02, @toolbar_bg_color)
 	bg[SELECTED] = @selected_bg_color
 	bg[ACTIVE] = shade (0.9, @toolbar_bg_color)
@@ -468,11 +468,12 @@ style "murrine-toolbutton" = "murrine-button" {
     ythickness=5
     GtkWidget::focus_padding=2
 
-	bg[NORMAL] = shade (1.08, @toolbar_bg_color)
-	bg[PRELIGHT] = shade (1.10, @toolbar_bg_color)
+    #inverting fg with bg to fix inkscape | eclipse toolbar
+	bg[NORMAL] = shade (1.15, @toolbar_fg_color)
+	bg[PRELIGHT] = shade (1.0, @toolbar_fg_color)
 	bg[SELECTED] = @selected_bg_color
-	bg[ACTIVE] = shade (0.95, @toolbar_bg_color)
-	bg[INSENSITIVE] = shade (0.85, @toolbar_bg_color)
+	#bg[ACTIVE] = shade (0.95, @toolbar_bg_color)
+	bg[INSENSITIVE] = shade (1.10, @toolbar_fg_color)
 
 	fg[NORMAL] = @toolbar_fg_color
 	fg[PRELIGHT] = @toolbar_fg_color
@@ -778,14 +779,13 @@ style "inkscape-toolbar-fix" {
 	engine "murrine" {
 		gradient_shades = { 1.0, 1.0, 1.0, 1.0 }
 		highlight_shade = 1.0
-		contrast = 1.0
 	}
 }
 
 #widget "*GtkHandleBox*" style "inkscape-toolbar-fix"
 #widget "*HandleBox*CommandsToolbar*" style "inkscape-toolbar-fix"
 #widget "*HandleBox*SnapToolbar*" style "inkscape-toolbar-fix"
-widget "*HandleBox*SelectToolbar*" style "inkscape-toolbar-fix"
+#widget "*HandleBox*SelectToolbar*" style "inkscape-toolbar-fix"
 #widget "*HandleBox*NodeToolbar*" style "inkscape-toolbar-fix"
 #widget "*HandleBox*TweakToolbar*" style "inkscape-toolbar-fix"
 #widget "*HandleBox*ZoomToolbar*" style "inkscape-toolbar-fix"
