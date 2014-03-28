@@ -105,7 +105,6 @@ WnckPager, WnckTasklist {
 
 NautilusWindow .toolbar {
     border-width: 0 0 1px;
-    /*border-width: 0 0 0px;*/
     border-style: solid;
     border-color: shade(@toolbar_bg_color, 0.8);
 }
@@ -120,24 +119,20 @@ NautilusWindow .sidebar .frame {
 
 NautilusWindow > GtkGrid > .pane-separator,
 NautilusWindow > GtkGrid > .pane-separator:hover {
-    border-width: 0 0px 0 0;
+    border-width: 0 1px 0 0;
     border-style: solid;
     border-color: shade(@theme_bg_color, 0.8);
     background-color: @theme_bg_color;
 }
 
 NautilusNotebook.notebook {
-    /*border-bottom-width: 0;*/
-}
-
-NautilusNotebook.notebook tab.top {
-   border-top-width: 0px;
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
 }
 
 NautilusNotebook .frame {
-    border-width: 0px 0px 0px 1px;
-    border-style: solid;
-    /*border-color: shade(@theme_base_color, 0.7);*/
+    border-width: 0;
 }
 
 NautilusQueryEditor .search-bar.toolbar {
@@ -148,8 +143,7 @@ NautilusQueryEditor .search-bar.toolbar {
 NautilusQueryEditor .toolbar {
     padding-top: 3px;
     padding-bottom: 2px;
-    /*border-width: 1px 0 0 0;*/
-    border-width: 0px 0 0 0;
+    border-width: 1px 0 0 0;
     border-style: solid;
     border-color: @toolbar_bg_color;
     background-color: shade(@toolbar_bg_color, 0.9);
@@ -161,7 +155,7 @@ NautilusQueryEditor .toolbar:nth-child(2) {
 
 NautilusQueryEditor .toolbar:last-child,
 NautilusQueryEditor .search-bar.toolbar:only-child {
-    border-bottom-width: 0px;
+    border-bottom-width: 1px;
     border-bottom-color: shade(@toolbar_bg_color, 0.8);
 }
 
@@ -222,16 +216,16 @@ GeditWindow .pane-separator:hover {
 .gedit-document-panel {
     background-color: @theme_bg_color;
     color: mix(@theme_fg_color, @theme_bg_color, 0.1);
- }
+}
 
 .gedit-document-panel-group-row,
 .gedit-document-panel-group-row:hover {
     border-top: 1px solid shade(@theme_bg_color, 0.9);
     background-color: @theme_bg_color;
- }
+}
 
 .gedit-document-panel-document-row:hover {
-   background-color: shade(@theme_bg_color, 1.05);
+    background-color: shade(@theme_bg_color, 1.05);
 }
 
 .gedit-document-panel-document-row:selected,
@@ -251,18 +245,18 @@ GeditWindow .pane-separator:hover {
     background-image: none;
     color: transparent;
     icon-shadow: none;
- }
+}
 
 .gedit-document-panel .prelight-row .button  {
     border-color: alpha(black, 0.1);
     color: mix(@theme_text_color, @theme_base_color, 0.5);
- }
+}
 
 .gedit-document-panel .list-row .button:hover,
 .gedit-document-panel .prelight-row .button:hover {
     color: @theme_text_color;
     border-color: alpha(black, 0.1);
- }
+}
 
 .gedit-document-panel .prelight-row .button:active {
     color: @theme_text_color;
@@ -272,7 +266,7 @@ GeditWindow .pane-separator:hover {
 
 GeditStatusbar {
     border-top: 1px solid shade(@theme_bg_color, 0.8);
- }
+}
 
 GeditStatusbar GeditSmallButton,
 GeditStatusMenuButton {
