@@ -6,7 +6,7 @@
     -GtkArrow-arrow-scaling: 0.5;
     -GtkButton-child-displacement-x: 0;
     -GtkButton-child-displacement-y: 0;
-    -GtkButton-default-border: 1;
+    -GtkButton-default-border: 0;
     -GtkButton-image-spacing: 0;
     -GtkButton-inner-border: 1;
     -GtkButton-interior-focus: true;
@@ -530,13 +530,21 @@ GtkComboBox .arrow {
     color: @theme_fg_color;
 }
 
+.list-row {
+    padding: 3px;
+}
+
 .list-row:hover {
-    background-color: shade(@theme_bg_color, 1.02);
+    background-color: shade(@theme_bg_color, 0.96);
 }
 
 .list-row:selected {
     background-color: @theme_selected_bg_color;
     color: @theme_selected_fg_color;
+}
+
+.list-row:selected:hover {
+    background-color: shade(@theme_bg_color, 0.95);
 }
 
 /*********
@@ -1093,7 +1101,7 @@ GtkModelMenuItem GtkBox GtkImage {
 GtkPopover {
     margin: 10px;
     padding: 2px;
-    border-radius: 0px;
+    border-radius: 1px;
     border-color: shade(@theme_bg_color, 0.8);
     border-width: 1px;
     border-style: solid;
@@ -1712,7 +1720,7 @@ GtkComboBox .separator {
 .sidebar row:prelight,
 .sidebar .view row:prelight {
     border-color: shade(@theme_bg_color, 1.05);
-    background-color: shade(@theme_bg_color, 1.05);
+    background-color: shade(@theme_bg_color, 0.96);
     background-image: none;
     color: @theme_fg_color;
 }
@@ -1720,7 +1728,7 @@ GtkComboBox .separator {
 .sidebar row:selected:prelight,
 .sidebar .view row:selected:prelight {
     border-color: shade(@theme_selected_bg_color, 1.05);
-    background-color: shade(@theme_selected_bg_color, 1.05);
+    background-color: shade(@theme_selected_bg_color, 0.96);
     background-image: none;
     color: @theme_selected_fg_color;
 }
