@@ -36,19 +36,25 @@
     -GtkToolButton-icon-spacing: 6;
     -GtkToolItemGroup-expander-size: 8;
     -GtkTreeView-expander-size: 8;
-    -GtkWidget-focus-line-width: 1;
-    -GtkWidget-focus-padding: 0;
     -GtkWidget-link-color: @link_color;
     -GtkWidget-visited-link-color: @link_color;
     -GtkWindow-resize-grip-height: 0;
     -GtkWindow-resize-grip-width: 0;
     -WnckTasklist-fade-overlay-rect: 0;
 
+    /* Legacy only */
+    -GtkWidget-focus-line-width: 1;
+    -GtkWidget-focus-padding: 0;
+
     background-clip: padding-box;
 
+    /*
     outline-color: alpha(@theme_selected_bg_color, 0.5);
-    outline-style: solid;
-    outline-offset: 0;
+    outline-style: dashed;
+    outline-width: 1px;
+    outline-offset: -2px;
+    outline-radius: 2px;
+    */
 }
 
 /***************
@@ -57,6 +63,11 @@
 .background {
     background-color: @theme_bg_color;
     color: @theme_fg_color;
+}
+
+.background:backdrop {
+    text-shadow: none;
+    icon-shadow: none;
 }
 
 *:selected,
@@ -307,6 +318,11 @@ GtkCheckButton:selected:focus {
     background-color: transparent;
 }
 
+GtkCheckButton {
+    outline-offset: 0;
+    padding: 3px;
+}
+
 /*****************
  * column-header *
  *****************/
@@ -343,6 +359,11 @@ column-header:last-child .button {
 /****************
  * content view *
  ****************/
+.content-view.subtitle {
+    font: smaller;
+    padding: 0 12px;
+}
+
 .content-view.view {
     background-color: @theme_base_color;
 }
@@ -387,11 +408,11 @@ GtkIconView.content-view.check:selected {
  * drawing area *
  ****************/
 GtkDrawingArea {
-    background-color: @theme_base_color;
+    background-color: @theme_bg_color;
 }
 
 GtkDrawingArea:insensitive {
-    background-color: shade(@theme_base_color, 0.9);
+    background-color: shade(@theme_bg_color, 0.9);
 }
 
 /***********
@@ -407,6 +428,7 @@ GtkHTML {
 ************/
 GtkCalendar {
     padding: 4px;
+    outline-offset: -1px;
 }
 
 GtkCalendar:inconsistent {
@@ -502,7 +524,12 @@ GtkComboBox.combobox-entry .button:insensitive {
 
 /************
  * expander *
- ************/
+************/
+GtkExpander {
+    padding: 3px;
+    outline-offset: 1px;
+}
+
 .expander {
 	color: alpha(currentColor, 0.7);
 	border: alpha(currentColor, 0.7);
@@ -540,7 +567,15 @@ GtkComboBox.combobox-entry .button:insensitive {
 }
 
 .list-row:selected:hover {
-    background-color: shade(@theme_bg_color, 0.95);
+    background-color: shade(@theme_bg_color, 0.96);
+}
+
+/**************
+* flow boxes *
+**************/
+
+.grid-child {
+    padding: 3px;
 }
 
 /*********
@@ -611,7 +646,6 @@ GtkInfoBar {
     background-image: none;
     color: @info_fg_color;
 }
-
 
 .info .button {
     border-top-color: shade(@info_bg_color, 0.8);
@@ -812,8 +846,8 @@ GtkInfoBar {
 }
 
 /*******************
-* symbolic images *
-*******************/
+ * symbolic images *
+ *******************/
 .image {
     color: alpha(currentColor, 0.5);
 }
@@ -909,6 +943,7 @@ GtkTreeMenu.menu,
 GtkMenuToolButton.menu,
 GtkComboBox .menu {
     background-color: @menu_bg_color;
+    margin: 3px;
 }
 
 .primary-toolbar .menu,
@@ -1092,8 +1127,8 @@ GtkModelMenuItem GtkBox GtkImage {
 }
 
 /************
-* popovers *
-************/
+ * popovers *
+ ************/
 GtkPopover {
     margin: 10px;
     padding: 2px;
@@ -1105,6 +1140,10 @@ GtkPopover {
     background-color: @theme_bg_color;
     color: @theme_fg_color;
     box-shadow: 0 2px 3px alpha(black, 0.5);
+}
+
+GtkPopover:backdrop {
+    box-shadow: none;
 }
 
 GtkPopover.osd {
@@ -1132,10 +1171,14 @@ GtkPopover .separator {
     font-weight: bold;
 }
 
-GtkModelButton.button,
-GtkModelButton.button:active,
-GtkModelButton.button:insensitive,
-GtkModelButton.button:active:insensitive {
+.menuitem.button {
+    color: @theme_fg_color;
+}
+
+.menuitem.button,
+.menuitem.button:active,
+.menuitem.button:insensitive,
+.menuitem.button:active:insensitive {
     background-color: transparent;
     background-image: none;
     border-color: transparent;
@@ -1144,12 +1187,12 @@ GtkModelButton.button:active:insensitive {
     color: @theme_fg_color;
 }
 
-GtkModelButton.button:active:hover,
-GtkModelButton.button:hover,
-GtkModelButton.button:selected {
+.menuitem.button:active:hover,
+.menuitem.button:hover,
+.menuitem.button:selected {
     border-width: 0;
     border-color: transparent;
-    background-color: @theme_selected_bg_color;
+    background-color: shade(@theme_selected_bg_color, 0.95);
     background-image: none;
     color: @theme_selected_fg_color;
 }
@@ -1159,16 +1202,18 @@ GtkModelButton.button:selected {
  ************/
 .notebook {
     padding: 0;
-    border-width: 1px;
-    border-right-width: 0;
+    border-width: 1px 0 0 0;
     border-style: solid;
-    border-color: shade(@theme_base_color, 0.8);
+    border-color: shade(@theme_base_color, 0.7);
     border-radius: 0;
     background-color: @theme_base_color;
     background-image: none;
     background-clip: border-box;
 
-    -GtkNotebook-initial-gap: 0;
+    -GtkNotebook-initial-gap: 10;
+    -GtkNotebook-arrow-spacing: 5;
+    -GtkNotebook-tab-curvature: 0;
+    -GtkNotebook-tab-overlap: 1;
     -GtkNotebook-has-tab-gap: false;
 }
 
@@ -1178,7 +1223,7 @@ GtkModelButton.button:selected {
 
 .notebook.header {
     border-width: 0;
-    background-color: shade(@theme_base_color, 0.95);
+    background-color: shade(@theme_base_color, 0.90);
 }
 
 .notebook.header.frame {
@@ -1208,71 +1253,104 @@ GtkModelButton.button:selected {
 }
 
 .notebook tab {
-    padding: 4px;
-    border-style: none;
-    background-color: shade(@theme_base_color, 0.87);
-    background-image: none;
-}
-
-.notebook tab:hover {
-    background-color: shade(@theme_base_color, 0.90);
+    padding: 4px 6px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: transparent;
+    background-color: transparent;
     background-image: none;
 }
 
 .notebook tab:active {
-    background-color: shade(@theme_base_color, 0.955);
+    background-color: transparent;
     background-image: none;
-    border-style: solid;
-    border-color: shade(@theme_base_color, 0.84);
 }
 
 .notebook tab.top {
+    border-bottom-width: 2px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+.notebook tab.top:hover {
+    border-bottom-color: shade(@theme_selected_bg_color, 0.84);
 }
 
 .notebook tab.top:active {
-    box-shadow:inset 0 -2px @theme_selected_fg_color;
-    border-width: 0px 1px 0px 1px;
+    border-bottom-color: @theme_selected_fg_color;
 }
 
 .notebook tab.right {
+    border-left-width: 2px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
 
+.notebook tab.right:hover {
+    border-left-color: shade(@theme_selected_bg_color, 0.84);
+}
+
 .notebook tab.right:active {
-    box-shadow:inset 2px 0 @theme_selected_fg_color;
-    border-width: 1px 0px 1px 0px;
+    border-left-color: @theme_selected_fg_color;
 }
 
 .notebook tab.bottom {
+    border-top-width: 2px;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
 
+.notebook tab.bottom:hover {
+    border-top-color: shade(@theme_selected_bg_color, 0.84);
+}
+
 .notebook tab.bottom:active {
-    box-shadow:inset 0 2px @theme_selected_fg_color;
-    border-width: 0px 1px 0px 1px;
+    border-top-color: @theme_selected_fg_color;
 }
 
 .notebook tab.left {
+    border-right-width: 2px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
+.notebook tab.left:hover {
+    border-right-color: shade(@theme_selected_bg_color, 0.84);
+}
+
 .notebook tab.left:active {
-    box-shadow:inset -2px 0 @theme_selected_fg_color;
-    border-width: 1px 0px 1px 0px;
+    border-right-color: @theme_selected_fg_color;
 }
 
 .notebook tab GtkLabel {
-    color: mix(@theme_text_color, @theme_base_color, 0.05);
+    color: mix(@theme_text_color, @theme_base_color, 0.3);
+}
+
+.notebook .prelight-page,
+.notebook .prelight-page GtkLabel {
+    color: mix (@theme_text_color, @theme_base_color, 0.15);
 }
 
 .notebook .active-page,
-.notebook tab .active-page GtkLabel {
+.notebook .active-page GtkLabel {
     color: @theme_text_color;
+}
+
+.notebook tab.reorderable-page:hover {
+    background-color: shade(@theme_base_color, 0.915);
+    border-left: 0;
+    border-right: 0;
+    /* using box shadows instead of borders due to slanted edges */
+    box-shadow: inset 0 0px shade(@theme_base_color, 0.80), inset 0 0px shade(@theme_base_color, 0.80), inset 0 1px shade(@theme_base_color, 0.80),
+                inset 1px 0 shade(@theme_base_color, 0.80), inset -1px 0 shade(@theme_base_color, 0.80);
+}
+
+.notebook tab.reorderable-page:active {
+    background-color: shade(@theme_base_color, 0.955);
+    border-left: 0;
+    border-right: 0;
+    box-shadow: inset 0 0px alpha(black, 0.03), inset 0 0px alpha(black, 0.03), inset 0 1px alpha(black, 0.03),
+                inset 1px 0 shade(@theme_base_color, 0.80), inset -1px 0 shade(@theme_base_color, 0.80);
 }
 
 /* close button styling */
@@ -1283,15 +1361,16 @@ GtkModelButton.button:selected {
     border-width: 1px;
     border-radius: 0px;
     border-style: solid;
-    /*border-color: transparent;*/
+    border-color: transparent;
     background-image: none;
-    /*background-color: transparent;*/
-    color: mix(@theme_text_color, @theme_base_color, 0.35);
+    background-color: transparent;
+    color: mix(@theme_text_color, @theme_base_color, 0.68);
 }
 
 .notebook tab .button:hover {
     color: @theme_text_color;
     border-color: shade(@theme_base_color, 0.8);
+    background-color: shade(@theme_base_color, 0.99);
 }
 
 .notebook tab .button:active,
@@ -1315,6 +1394,8 @@ GtkProgressBar {
     padding: 0;
     border-width: 1px;
     border-radius: 0px;
+    font-size: smaller;
+    color: alpha(@theme_fg_color, 0.6);
 }
 
 .progressbar,
@@ -1440,7 +1521,8 @@ GtkLevelBar.vertical {
 
     padding: 0;
     border-width: 0px;
-    border-radius: 1px;
+    border-radius: 0px;
+    outline-offset: -1px;
 }
 
 .scale.slider {
@@ -1495,14 +1577,14 @@ GtkLevelBar.vertical {
     margin: 0 6px;
 }
 
-.menubar .menuitem .scale.highlight.left,
+.menuitem .scale.highlight.left,
 .scale.highlight.left {
     border-color: @theme_selected_bg_color;
     background-color: shade(@theme_bg_color, 0.90);
     background-image: none;
 }
 
-.menubar .menuitem .scale.highlight.left:hover {
+.menuitem .scale.highlight.left:hover {
     border-color: shade(@theme_selected_bg_color, 0.8);
     background-color: shade(@theme_selected_bg_color, 0.8);
 }
@@ -1689,7 +1771,6 @@ GtkComboBox .separator {
     -GtkWidget-vertical-separator: 0;
 
     border-style: none;
-
 }
 
 /***********
@@ -1926,6 +2007,7 @@ GtkSwitch {
     padding: 0;
     border-radius: 0px;
     font: bold condensed;
+    outline-offset: -4px;
 }
 
 GtkSwitch.slider {
@@ -2097,10 +2179,11 @@ GtkColorButton.button {
 
 .header-bar .title {
     font: bold;
+    padding: 0 12px;
 }
 
 .header-bar .subtitle {
-    font: smaller;
+    font: 8px;
     padding: 0 12px;
 }
 
@@ -2435,7 +2518,7 @@ GtkColorButton.button {
     border-width: 1px;
     border-radius: 0;
     border-right-width: 0;
-    border-left-width: 0;
+    /*border-left-width: 0;*/
 }
 
 /*leftmost button */
@@ -2471,7 +2554,7 @@ GtkColorButton.button {
 .inline-toolbar.toolbar GtkToolButton:last-child .button:insensitive {
     border-width: 1px;
     border-radius: 0;
-    border-left-width: 0;
+    /*border-left-width: 0;*/
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -2904,8 +2987,8 @@ GtkColorButton.button {
  ************/
 GtkTreeView {
     -GtkTreeView-vertical-separator: 0;
-    -GtkWidget-focus-line-width: 1;
-    -GtkWidget-focus-padding: 1;
+
+    outline-offset: -1px;
 }
 
 GtkTreeView.dnd {
@@ -2998,6 +3081,7 @@ GtkMessageDialog,
     -GtkDialog-content-area-border: 0;
     -GtkDialog-action-area-border: 0;
     -GtkDialog-button-spacing: 0;
+
     margin: 0;
     padding: 0;
 }
@@ -3019,6 +3103,22 @@ GtkFontButton GtkLabel:last-child {
 
 GtkFileChooserButton GtkImage:last-child {
     color: alpha(currentColor, 0.7);
+}
+
+GtkFileChooser .pane-separator,
+GtkFileChooser .pane-separator:hover {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.8);
+    background-color: @theme_bg_color;
+    color: shade(@theme_bg_color, 0.9);
+}
+
+/* for fallback when header bar not used */
+GtkFileChooser .dialog-action-box {
+    border-width: 1px 0 0;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.7);
 }
 
 /*********************
@@ -3340,27 +3440,27 @@ GtkProgressBar.osd.progressbar {
 }
 
 /******************************
-* suggested action buttons *
-******************************/
+ * suggested action buttons *
+ ******************************/
 .suggested-action.button {
     border-width: 1px;
     border-style: solid;
-    border-color: shade(@theme_selected_bg_color, 0.9);
+    border-color: shade(@theme_selected_bg_color, 0.80);
     border-radius: 0px;
-    background-color: shade(@theme_selected_bg_color, 1.18);
+    background-color: shade(@theme_selected_bg_color, 0.98);
     background-image: none;
-    color: mix(@theme_selected_fg_color, @theme_selected_bg_color, 0.1);
+    /*color: mix(@theme_selected_fg_color, @theme_selected_bg_color, 0.1);*/
 }
 
 .suggested-action.button:hover {
     border-color: shade(@theme_selected_bg_color, 0.8);
-    background-color: shade(@theme_selected_bg_color, 1.20);
+    background-color: shade(@theme_selected_bg_color, 0.95);
     background-image: none;
 }
 
 .suggested-action.button:active {
     border-color: shade(@theme_selected_bg_color, 0.9);
-    background-color: shade(@theme_selected_bg_color, 1.05);
+    background-color: shade(@theme_selected_bg_color, 0.65);
     background-image: none;
 }
 
