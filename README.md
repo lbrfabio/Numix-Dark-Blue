@@ -1,4 +1,4 @@
-svrenks(based on Numix) is a modern flat theme with a combination of light and dark elements. It supports Gnome, Unity, XFCE and Openbox.
+svrenks-dark(based on Numix) is a modern flat theme with a combination of light and dark elements. It supports Gnome, Unity, XFCE and Openbox.
 
 ### Manual installation
 
@@ -15,8 +15,8 @@ dconf write org.gnome.shell.extensions.user-theme "'svrenks'"
 To set the theme in Xfce, run the following commands in Terminal,
 
 ```
-xfconf-query -c xsettings -p /Net/ThemeName -s "svrenks"
-xfconf-query -c xfwm4 -p /general/theme -s "svrenks"
+xfconf-query -c xsettings -p /Net/ThemeName -s "svrenks-dark"
+xfconf-query -c xfwm4 -p /general/theme -s "svrenks-dark"
 ```
 
 ### Requirements
@@ -27,6 +27,6 @@ Murrine theme engine
 
 ### Code and license
 
-Report bugs or contribute at [GitHub](https://github.com/lbrfabio/svrenks)
+Report bugs or contribute at [GitHub](https://github.com/lbrfabio/svrenks-dark)
 
 License: GPL-3.0+
