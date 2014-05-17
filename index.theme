@@ -1,10 +1,11 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Numix-Dark-Blue
+Name=Svrenks-Dark
+Name=Svrenks
 Comment=A modern flat theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Numix-Dark-Blue
-MetacityTheme=Numix-Dark-Blue
+GtkTheme=Svrenks-Dark
+MetacityTheme=Svrenks-Dark
 ButtonLayout=:minimize,maximize,close
