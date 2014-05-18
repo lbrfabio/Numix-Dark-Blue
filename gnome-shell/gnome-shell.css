@@ -370,6 +370,7 @@ StScrollBar StButton#vhandle:active {
     font-weight: normal;
 }
 
+.app-view-control:hover,
 .candidate-page-button:hover,
 .notification-button:hover,
 .notification-icon-button:hover,
@@ -403,8 +404,8 @@ StScrollBar StButton#vhandle:active {
 .modal-dialog-button:active,
 .modal-dialog-button:pressed,
 .app-view-control:checked {
-    background-gradient-start: #282828;
-    background-gradient-end: #282828;
+    background-gradient-start: rgba(40,40,40,1.0);
+    background-gradient-end: rgba(40,40,40,1.0);
     border-color: #404040;
 }
 
@@ -431,13 +432,13 @@ StScrollBar StButton#vhandle:active {
 
 .app-view-control:first-child:ltr,
 .app-view-control:last-child:rtl {
-    border-radius: 3px 0px 0px 3px;
+    border-radius: 0px 0px 0px 0px;
     border-right-width: 0px;
 }
 
 .app-view-control:last-child:ltr,
 .app-view-control:first-child:rtl {
-    border-radius: 0px 3px 3px 0px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 /* Entries */
