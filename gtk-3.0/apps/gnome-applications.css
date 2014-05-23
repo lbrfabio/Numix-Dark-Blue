@@ -201,6 +201,10 @@ TerminalWindow .scrollbar.slider.vertical:active {
     background-color: @theme_selected_bg_color;
 }
 
+TerminalWindow.background {
+    background-color: alpha(@theme_bg_color, 0.9);
+}
+
 /*********
  * gedit *
  *********/
