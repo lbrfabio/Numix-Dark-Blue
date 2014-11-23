@@ -146,9 +146,9 @@ StScrollBar StButton#vhandle:active {
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
     -arrow-border-radius: 0px;
-    -arrow-background-color: #282828;
+    -arrow-background-color: #242424;
     -arrow-border-width: 1px;
-    -arrow-border-color: #383838;
+    -arrow-border-color: #323232;
     -arrow-base: 20px;
     -arrow-rise: 8px;
     box-shadow: 0 1px 2px 0px rgba(0,0,0,0.5);
@@ -1816,8 +1816,8 @@ StScrollBar StButton#vhandle:active {
 
 .osd-window,
 .switcher-list {
-    background: rgba(23,23,23,0.87);
-    border: 1px solid rgba(60,60,60,1.0);
+    background: rgba(27,27,27,1.0);
+    border: 1px solid rgba(38,38,38,1.0);
     border-radius: 0px;
     padding: 20px;
 }
