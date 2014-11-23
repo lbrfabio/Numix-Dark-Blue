@@ -130,7 +130,7 @@ StScrollBar StButton#vhandle:active {
     -slider-height: 0.35em;
     -slider-background-color: #444444;
     -slider-border-color: #5f5f5f;
-    -slider-active-background-color: #8da9e0;
+    -slider-active-background-color: #829fa9;
     -slider-active-border-color: #1f6dbc;
     -slider-border-width: 0px;
     -slider-handle-radius: 0px;
@@ -146,9 +146,9 @@ StScrollBar StButton#vhandle:active {
 .popup-menu-boxpointer,
 .candidate-popup-boxpointer {
     -arrow-border-radius: 0px;
-    -arrow-background-color: #171717;
+    -arrow-background-color: #282828;
     -arrow-border-width: 1px;
-    -arrow-border-color: #282828;
+    -arrow-border-color: #383838;
     -arrow-base: 20px;
     -arrow-rise: 8px;
     box-shadow: 0 1px 2px 0px rgba(0,0,0,0.5);
@@ -220,7 +220,7 @@ StScrollBar StButton#vhandle:active {
 
 .popup-menu-item:active {
     background-color: #393939;
-    color: #8da9e0;
+    color: #829fa9;
 }
 
 .popup-menu-item:insensitive {
@@ -1317,7 +1317,7 @@ StScrollBar StButton#vhandle:active {
     background-color: #4c4c4c;
 }
 .calendar-change-month-back:active {
-    background-color: #8da9e0;
+    background-color: #829fa9;
 }
 
 .calendar-change-month-forward {
@@ -1336,7 +1336,7 @@ StScrollBar StButton#vhandle:active {
     background-color: #4c4c4c;
 }
 .calendar-change-month-forward:active {
-    background-color: #8da9e0;
+    background-color: #829fa9;
 }
 
 .datemenu-date-label {
@@ -1370,7 +1370,7 @@ StScrollBar StButton#vhandle:active {
 
 .calendar-day-base:active {
     font-size: 9pt;
-    background-color: #8da9e0;
+    background-color: #829fa9;
     color: white;
 }
 
@@ -1877,7 +1877,7 @@ StScrollBar StButton#vhandle:active {
     background: rgba(255,255,255,0.33);
 }
 
-.ripple-box {
+/*.ripple-box {
     width: 52px;
     height: 52px;
     background-image: url("corner-ripple-ltr.svg");
@@ -1886,7 +1886,7 @@ StScrollBar StButton#vhandle:active {
 
 .ripple-box:rtl {
     background-image: url("corner-ripple-rtl.svg");
-}
+}*/
 
 .switcher-arrow {
     border-color: rgba(0,0,0,0);
@@ -1944,7 +1944,7 @@ StScrollBar StButton#vhandle:active {
 /* Tile previews */
 .tile-preview {
     background-color: rgba(141, 169, 224, 0.35);
-    border: 1px solid #8da9e0; /* Adwaita selected bg color */
+    border: 1px solid #829fa9; /* Adwaita selected bg color */
 }
 
 .tile-preview-left.on-primary {
