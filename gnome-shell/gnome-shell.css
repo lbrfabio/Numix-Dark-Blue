@@ -130,7 +130,7 @@ StScrollBar StButton#vhandle:active {
     -slider-height: 0.35em;
     -slider-background-color: #444444;
     -slider-border-color: #5f5f5f;
-    -slider-active-background-color: #829fa9;
+    -slider-active-background-color: #8da9e0;
     -slider-active-border-color: #1f6dbc;
     -slider-border-width: 0px;
     -slider-handle-radius: 0px;
@@ -220,7 +220,7 @@ StScrollBar StButton#vhandle:active {
 
 .popup-menu-item:active {
     background-color: #393939;
-    color: #829fa9;
+    color: #8da9e0;
 }
 
 .popup-menu-item:insensitive {
@@ -741,10 +741,8 @@ StScrollBar StButton#vhandle:active {
 .workspace-thumbnails {
     spacing: 11px;
     visible-width: 32px; /* Amount visible before hovering */
-    border: 1px solid 1px solid rgba(35,35,35,1.0);
-    border-right: 0px;
-    border-radius: 1px 0px 0px 1px;
-    background-color: rgba(28,28,28,0.97);
+    border: none;
+    background: transparent; 
     padding: 11px 7px 11px 11px;
 }
 
@@ -756,9 +754,9 @@ StScrollBar StButton#vhandle:active {
 }
 
 .workspace-thumbnail-indicator {
-    border: 2px solid rgba(77,77,77,0.9);
+    border: 2px solid #aaa;
     border-radius: 1px;
-    padding: 4px;
+    padding: 0px;
 }
 
 .window-caption {
@@ -1317,7 +1315,7 @@ StScrollBar StButton#vhandle:active {
     background-color: #4c4c4c;
 }
 .calendar-change-month-back:active {
-    background-color: #829fa9;
+    background-color: #8da9e0;
 }
 
 .calendar-change-month-forward {
@@ -1336,7 +1334,7 @@ StScrollBar StButton#vhandle:active {
     background-color: #4c4c4c;
 }
 .calendar-change-month-forward:active {
-    background-color: #829fa9;
+    background-color: #8da9e0;
 }
 
 .datemenu-date-label {
@@ -1370,7 +1368,7 @@ StScrollBar StButton#vhandle:active {
 
 .calendar-day-base:active {
     font-size: 9pt;
-    background-color: #829fa9;
+    background-color: #8da9e0;
     color: white;
 }
 
@@ -1904,8 +1902,8 @@ StScrollBar StButton#vhandle:active {
 }
 
 .workspace-switcher-container {
-    background: rgba(23,23,23,0.85);
-    border: 1px solid rgba(60,60,60,1.0);
+    background: rgba(27,27,27,1.0);
+    border: 1px solid rgba(38,38,38,1.0);
     border-radius: 1px;
     padding: 20px;
 }
@@ -1944,7 +1942,7 @@ StScrollBar StButton#vhandle:active {
 /* Tile previews */
 .tile-preview {
     background-color: rgba(141, 169, 224, 0.35);
-    border: 1px solid #829fa9; /* Adwaita selected bg color */
+    border: 1px solid #8da9e0; /* Adwaita selected bg color */
 }
 
 .tile-preview-left.on-primary {
