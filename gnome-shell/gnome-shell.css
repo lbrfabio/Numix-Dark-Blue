@@ -741,10 +741,8 @@ StScrollBar StButton#vhandle:active {
 .workspace-thumbnails {
     spacing: 11px;
     visible-width: 32px; /* Amount visible before hovering */
-    border: 1px solid 1px solid rgba(35,35,35,1.0);
-    border-right: 0px;
-    border-radius: 1px 0px 0px 1px;
-    background-color: rgba(28,28,28,0.97);
+    border: none;
+    background: transparent; 
     padding: 11px 7px 11px 11px;
 }
 
@@ -756,9 +754,9 @@ StScrollBar StButton#vhandle:active {
 }
 
 .workspace-thumbnail-indicator {
-    border: 2px solid rgba(77,77,77,0.9);
+    border: 2px solid #aaa;
     border-radius: 1px;
-    padding: 4px;
+    padding: 0px;
 }
 
 .window-caption {
@@ -1904,8 +1902,8 @@ StScrollBar StButton#vhandle:active {
 }
 
 .workspace-switcher-container {
-    background: rgba(23,23,23,0.85);
-    border: 1px solid rgba(60,60,60,1.0);
+    background: rgba(27,27,27,1.0);
+    border: 1px solid rgba(38,38,38,1.0);
     border-radius: 1px;
     padding: 20px;
 }
