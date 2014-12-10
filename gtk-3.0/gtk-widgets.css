@@ -2248,7 +2248,7 @@ GtkColorButton.button {
  * header-bar *
  **************/
 .header-bar {
-    padding: 5px;
+    padding: 4px;
     border-width: 0 0 1px 0;
     border-radius: 0;
     border-style: solid;
@@ -2259,11 +2259,11 @@ GtkColorButton.button {
 }
 
 .header-bar .button.text-button {
-    padding: 4px 9px;
+    padding: 4px;
 }
 
 .header-bar .button.image-button {
-    padding: 3px 6px 3px 6px;
+    padding: 6px;
 }
 
 .header-bar .title {
@@ -3163,9 +3163,6 @@ GtkColorButton.button {
     border-radius: 0;
     border-right-width: 0;
     border-left-width: 0;
-
-    padding-bottom: 4px;
-    padding-top: 4px;
 }
 
 /* leftmost button */
@@ -3183,9 +3180,6 @@ GtkColorButton.button {
     border-right-width: 0;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
-
-    padding-bottom: 4px;
-    padding-top: 4px;
 }
 
 /* rightmost button */
@@ -3206,9 +3200,6 @@ GtkColorButton.button {
     border-left-width: 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
-
-    padding-bottom: 4px;
-    padding-top: 4px;
 }
 
 /* linked single button */
@@ -3226,11 +3217,7 @@ GtkColorButton.button {
 .header-bar .linked .button:insensitive:only-child {
     border-width: 1px;
     border-radius: 0;
-
-    padding-bottom: 4px;
-    padding-top: 4px;
 }
-
 
 /***********
  * tooltip *
@@ -3621,7 +3608,6 @@ GtkOverlay.osd {
 
 .osd GtkProgressBar,
 GtkProgressBar.osd {
-
     -GtkProgressBar-xspacing: 0;
     -GtkProgressBar-yspacing: 2px;
     -GtkProgressBar-min-horizontal-bar-height: 2px;
