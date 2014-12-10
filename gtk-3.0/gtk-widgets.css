@@ -1818,6 +1818,14 @@ OsScrollbar:insensitive {
     color: shade(@theme_bg_color, 0.9);
 }
 
+.sidebar.separator:hover,
+.sidebar.view.separator:hover,
+.sidebar .view.separator:hover,
+.view.separator:hover,
+    .separator:hover {
+    color: shade(@theme_bg_color, 0.9);
+}
+
 .button .separator,
 .button.separator {
     border-color: shade(@theme_bg_color, 0.95);
