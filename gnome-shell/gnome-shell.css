@@ -45,7 +45,7 @@ stage {
 /* small bold */
 .dash-label,
 .window-caption,
-.switcher-list, 
+.switcher-list,
 .app-well-app > .overview-icon,
 .show-apps > .overview-icon,
 .grid-search-result .overview-icon {
@@ -154,6 +154,12 @@ StScrollBar StButton#vhandle:active {
     box-shadow: 0 1px 2px 0px rgba(0,0,0,0.5);
 }
 
+.popup-menu-boxpointer.fallback-app-menu.dark {
+    -arrow-background-color: #3f4747;
+    -arrow-border-color: #282b2b;
+}
+
+
 .popup-menu {
     min-width: 200px;
 }
@@ -171,11 +177,34 @@ StScrollBar StButton#vhandle:active {
     background-color: #4c4c4c;
 }
 
+.fallback-app-menu .popup-submenu-menu-item:open {
+    background-color: #888888;
+    color: white;
+}
+
+.fallback-app-menu.dark .popup-submenu-menu-item:open {
+    background-color: #333333;
+}
+
 .popup-sub-menu {
     background-gradient-start: rgba(80,80,80,0.3);
     background-gradient-end: rgba(80,80,80,0.4);
     background-gradient-direction: vertical;
     box-shadow: inset 0px 2px 2px rgba(0,0,0,0.9);
+}
+
+.fallback-app-menu .popup-sub-menu {
+    background-gradient-start: #dddddd;
+    background-gradient-end: #dfdfdf;
+    background-gradient-direction: vertical;
+    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+}
+
+.fallback-app-menu.dark .popup-sub-menu {
+    background-gradient-start: #474747;
+    background-gradient-end: #4b4b4b;
+    background-gradient-direction: vertical;
+    box-shadow: inset 0px 2px 4px rgba(0,0,0,0.9);
 }
 
 .popup-sub-menu:scrolled .popup-menu-item:ltr {
@@ -197,6 +226,10 @@ StScrollBar StButton#vhandle:active {
 .popup-sub-menu StScrollBar StBin#vhandle {
     background-color: #4c4c4c;
     border-width: 0px;
+}
+
+.app-well-menu {
+    max-width: 400px;
 }
 
 /* The remaining popup-menu sizing is all done in ems, so that if you
@@ -227,7 +260,29 @@ StScrollBar StButton#vhandle:active {
     color: #9f9f9f;
 }
 
-.popup-image-menu-item {
+.fallback-app-menu .popup-menu-item {
+    color: #43484a;
+}
+
+.fallback-app-menu .popup-menu-item:active {
+    color: white;
+    background-color: #4689cd;
+}
+
+.fallback-app-menu .popup-menu-item:insensitive {
+    color: gray;
+}
+
+.fallback-app-menu.dark .popup-menu-item {
+    color: white;
+}
+
+.fallback-app-menu.dark .popup-menu-item:active {
+    background-color: #445f7d;
+}
+
+.fallback-app-menu.dark .popup-menu-item:insensitive {
+    color: #9f9f9f;
 }
 
 .popup-separator-menu-item {
@@ -241,6 +296,17 @@ StScrollBar StButton#vhandle:active {
 
 .popup-alternating-menu-item:alternate {
     font-weight: bold;
+}
+
+.fallback-app-menu .popup-separator-menu-item {
+    -gradient-start: #a0a2a3;
+    -gradient-end: #a0a2a3;
+    -margin-horizontal: 0;
+}
+
+.fallback-app-menu.dark .popup-separator-menu-item {
+    -gradient-start: #818584;
+    -gradient-end: #818584;
 }
 
 .popup-status-menu-item {
@@ -335,7 +401,7 @@ StScrollBar StButton#vhandle:active {
     background-color: #4c4c4c;
 }
 
-.nm-dialog-item:checked {
+.nm-dialog-item:selected {
     background-color: #333;
 }
 
@@ -349,6 +415,14 @@ StScrollBar StButton#vhandle:active {
 
 .nm-dialog-icon {
     icon-size: 16px;
+}
+
+.no-networks-label {
+    color: #999999;
+}
+
+.no-networks-box {
+    spacing: 12px;
 }
 
 /* Buttons */
@@ -421,7 +495,7 @@ StScrollBar StButton#vhandle:active {
 
 /* Common radii */
 
-#searchEntry,
+.search-entry,
 .modal-dialog-button,
 .notification-button,
 .hotplug-notification-item,
@@ -443,7 +517,7 @@ StScrollBar StButton#vhandle:active {
 
 /* Entries */
 
-#searchEntry,
+.search-entry,
 .login-dialog StEntry,
 .notification StEntry,
 .modal-dialog StEntry {
@@ -456,7 +530,7 @@ StScrollBar StButton#vhandle:active {
     padding: 4px 12px;
 }
 
-#searchEntry,
+.search-entry,
 .login-dialog StEntry,
 .run-dialog-entry,
 .notification StEntry {
@@ -468,8 +542,8 @@ StScrollBar StButton#vhandle:active {
     box-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.1);
 }
 
-#searchEntry:focus,
-#searchEntry:hover,
+.search-entry:focus,
+.search-entry:hover,
 .login-dialog StEntry:focus,
 .notification StEntry:focus,
 .modal-dialog StEntry {
@@ -483,7 +557,7 @@ StScrollBar StButton#vhandle:active {
     border: 1px solid #3b3b3b;
 }
 
-#searchEntry {
+.search-entry {
     border-color: transparent;
     background-gradient-start: rgba(111,111,111,0.1);
     background-gradient-end: rgba(111,111,111,0.1);
@@ -491,12 +565,12 @@ StScrollBar StButton#vhandle:active {
     caret-color: #777;
 }
 
-#searchEntry:hover {
+.search-entry:hover {
     color: rgb(128, 128, 128);
     caret-color: rgb(128, 128, 128);
 }
 
-#searchEntry:focus {
+.search-entry:focus {
     background-gradient-start: rgba(255,255,255,0.2);
     background-gradient-end: rgba(255,255,255,0.2);
     color: white;
@@ -879,7 +953,7 @@ StScrollBar StButton#vhandle:active {
 
 /* Search Box */
 
-#searchEntry {
+.search-entry {
     width: 320px;
 }
 
@@ -888,8 +962,8 @@ StScrollBar StButton#vhandle:active {
     color: #c0c0c0;
 }
 
-#searchEntry:hover .search-entry-icon,
-#searchEntry:focus .search-entry-icon {
+.search-entry:hover .search-entry-icon,
+.search-entry:focus .search-entry-icon {
     color: #8d8f8a;
 }
 
@@ -1124,6 +1198,7 @@ StScrollBar StButton#vhandle:active {
 .show-apps:checked > .overview-icon,
 .show-apps:active > .overview-icon,
 .search-provider-icon:active,
+.grid-search-result:active .overview-icon,
 .list-search-result:active {
     background-gradient-start: rgba(255, 255, 255, .15);
     background-gradient-end: rgba(255, 255, 255, .15);
@@ -1467,6 +1542,10 @@ StScrollBar StButton#vhandle:active {
     text-align: right;
 }
 
+.events-day-time-ellipses {
+    color: rgba(153, 153, 153, 1.0);
+}
+
 .events-day-time:rtl {
     text-align: left;
 }
@@ -1479,10 +1558,6 @@ StScrollBar StButton#vhandle:active {
 .events-day-task:rtl {
     padding-left: 0px;
     padding-right: 8pt;
-}
-
-.url-highlighter {
-    link-color: #ccccff;
 }
 
 /* Message Tray */
@@ -1511,6 +1586,14 @@ StScrollBar StButton#vhandle:active {
 .message-tray-menu-button:active StIcon,
 .message-tray-menu-button:focus StIcon {
     color: #eeeeee;
+}
+
+.url-highlighter {
+    link-color: #ccccff;
+}
+
+.no-messages-label
+    color: #999999;
 }
 
 .no-messages-label,
@@ -2119,6 +2202,11 @@ StScrollBar StButton#vhandle:active {
 .end-session-dialog-app-list-item-description {
     color: #444444;
     font-size: 10pt;
+}
+
+/* Restart message */
+.restart-message {
+    font-size: 14pt;
 }
 
 /* ShellMountOperation Dialogs */
