@@ -130,7 +130,7 @@ StScrollBar StButton#vhandle:active {
     -slider-height: 0.35em;
     -slider-background-color: #444444;
     -slider-border-color: #5f5f5f;
-    -slider-active-background-color: #8da9e0;
+    -slider-active-background-color: #829fa9;
     -slider-active-border-color: #1f6dbc;
     -slider-border-width: 0px;
     -slider-handle-radius: 0px;
@@ -253,7 +253,7 @@ StScrollBar StButton#vhandle:active {
 
 .popup-menu-item:active {
     background-color: #393939;
-    color: #8da9e0;
+    color: #829fa9;
 }
 
 .popup-menu-item:insensitive {
@@ -1390,7 +1390,7 @@ StScrollBar StButton#vhandle:active {
     background-color: #4c4c4c;
 }
 .calendar-change-month-back:active {
-    background-color: #8da9e0;
+    background-color: #829fa9;
 }
 
 .calendar-change-month-forward {
@@ -1409,7 +1409,7 @@ StScrollBar StButton#vhandle:active {
     background-color: #4c4c4c;
 }
 .calendar-change-month-forward:active {
-    background-color: #8da9e0;
+    background-color: #829fa9;
 }
 
 .datemenu-date-label {
@@ -1443,7 +1443,7 @@ StScrollBar StButton#vhandle:active {
 
 .calendar-day-base:active {
     font-size: 9pt;
-    background-color: #8da9e0;
+    background-color: #829fa9;
     color: white;
 }
 
@@ -2021,7 +2021,7 @@ StScrollBar StButton#vhandle:active {
 /* Tile previews */
 .tile-preview {
     background-color: rgba(141, 169, 224, 0.35);
-    border: 1px solid #8da9e0; /* Adwaita selected bg color */
+    border: 1px solid #829fa9; /* Adwaita selected bg color */
 }
 
 .tile-preview-left.on-primary {
@@ -2198,11 +2198,6 @@ StScrollBar StButton#vhandle:active {
 .end-session-dialog-app-list-item-description {
     color: #444444;
     font-size: 10pt;
-}
-
-/* Restart message */
-.restart-message {
-    font-size: 14pt;
 }
 
 /* ShellMountOperation Dialogs */
