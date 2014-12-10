@@ -1592,10 +1592,6 @@ StScrollBar StButton#vhandle:active {
     link-color: #ccccff;
 }
 
-.no-messages-label
-    color: #999999;
-}
-
 .no-messages-label,
 .no-networks-label {
     font-family: "Roboto", sans-serif;
