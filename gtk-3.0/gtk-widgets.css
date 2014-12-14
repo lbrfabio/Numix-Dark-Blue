@@ -3695,7 +3695,7 @@ GtkProgressBar.osd.progressbar {
     border-radius: 2px;
     background-color: @error_color;
     background-image: none;
-    color: mix(@theme_selected_fg_color, @error_color, 0.1);
+    color: mix(@theme_selected_bg_color, @error_color, 0.1);
 }
 
 .destructive-action.button:hover {
