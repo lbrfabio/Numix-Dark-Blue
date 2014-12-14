@@ -3691,15 +3691,15 @@ GtkProgressBar.osd.progressbar {
 .destructive-action.button {
     border-width: 1px;
     border-style: solid;
-    border-color: shade(@error_color, 0.8);
-    border-radius: 2px;
+    border-color: shade(@error_color, 0.9);
+    border-radius: 1px;
     background-color: @error_color;
     background-image: none;
-    color: mix(@theme_selected_bg_color, @error_color, 0.1);
+    color: mix(@tooltip_fg_color, @error_color, 0.1);
 }
 
 .destructive-action.button:hover {
-    border-color: shade(@error_color, 0.7);
+    border-color: shade(@error_color, 0.9);
     background-color: shade(@error_color, 1.12);
     background-image: none;
 }
