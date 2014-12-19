@@ -3,9 +3,7 @@
 *******************/
 /* draw regular check and radio items using our assets */
 .check,
-.check:focus,
-.check row:selected,
-.check row:selected:focus {
+.check:focus {
 	-gtk-icon-source: url("assets/checkbox-unchecked-dark.svg");
 }
 
@@ -40,9 +38,7 @@
 	-gtk-icon-source: url("assets/checkbox-mixed-insensitive-dark.svg");
 }
 
-.radio,
-.radio row:selected,
-.radio row:selected:focus {
+.radio {
 	-gtk-icon-source: url("assets/radio-unselected-dark.svg");
 }
 
