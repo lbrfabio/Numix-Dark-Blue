@@ -63,8 +63,8 @@
 
 /* window manager colors */
 @define-color wm_bg @titlebar_bg_color;
-@define-color wm_title_focused #7a8285;
-@define-color wm_title_unfocused #b8b8b8;
+@define-color wm_title_focused #b8b8b8;
+@define-color wm_title_unfocused #7a8285;
 @define-color wm_border_focused #1e272b;
 @define-color wm_border_unfocused #1e272b;
 
